@@ -17,4 +17,4 @@ The app is built using the following technologies:
 
 ## Contributors
 
-This project was created by me
+This project was created by [JamieBurridge](https://github.com/JamieBurridge)
