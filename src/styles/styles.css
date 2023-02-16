@@ -58,15 +58,14 @@ input {
   height: 92px;
 }
 
-
- input::-webkit-slider-thumb {
+input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 30px;
+  width: 10px;
   height: 92px;
   background: var(--secondary-color);
   cursor: -moz-grab;
-  cursor: -webkit-grab; 
- }
+  cursor: -webkit-grab;
+}
 
 #info,
 #menu {
