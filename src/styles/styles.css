@@ -21,6 +21,10 @@ body {
 }
 
 body {
+  background-color: #000;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
