@@ -5,7 +5,6 @@
 
   --button-height: 92px;
 
-  
   --slider-position: 10%;
 }
 
@@ -31,6 +30,7 @@ body {
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 #info,
