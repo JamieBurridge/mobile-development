@@ -1,4 +1,7 @@
 :root {
+  --primary-color: #bfd11f;
+  --secondary-color: #121213;
+  --terciary-color: #2c2b27;
 
   --button-height: 92px;
 
@@ -27,6 +30,12 @@ body {
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
+}
+
+#info,
+#menu {
+  display: flex;
+  height: var(--button-height);
 }
 
 button {
