@@ -81,13 +81,5 @@ input:before {
 }
 
 input::-webkit-slider-thumb {
-  appearance: none;
-  -webkit-appearance: none;
-
-  width: 10px;
-  height: 92px;
-  background: var(--terciary-color);
-
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
+  opacity: 0;
 }
