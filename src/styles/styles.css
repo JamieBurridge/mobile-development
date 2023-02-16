@@ -34,7 +34,7 @@ body {
 }
 
 #info,
-#menu {
+nav {
   display: flex;
   height: var(--button-height);
 }
@@ -58,10 +58,6 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-}
-
-#volume {
-  position: relative;
 }
 
 input {

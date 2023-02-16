@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PWA Music Player" />
     <link rel="stylesheet" href="src/styles/styles.css" />
     <title>PWA Music Player</title>
   </head>
 
   <body>
     <div id="info">
-      <button type="button">INFO</button>
+      <button type="button" aria-label="info-button">INFO</button>
     </div>
 
     <div id="controller">
-      <button type="button">
+      <button type="button" aria-label="previous">
         <svg
           width="40%"
           height="100%"
@@ -27,7 +28,7 @@
           />
         </svg>
       </button>
-      <button type="button">
+      <button type="button" aria-label="play">
         <svg
           width="80%"
           height="100%"
@@ -37,7 +38,7 @@
           <path d="M22.164,11.082l-22.164,11.082l0,-22.164l22.164,11.082Z" />
         </svg>
       </button>
-      <button type="button">
+      <button type="button" aria-label="next">
         <svg
           width="40%"
           height="100%"
@@ -52,11 +53,17 @@
     </div>
 
     <div id="volume">
-      <input type="range" min="1" max="100" value="10" />
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="10"
+        aria-label="volume-slider"
+      />
     </div>
 
-    <nav id="menu">
-      <button type="button">
+    <nav>
+      <button type="button" aria-label="menu-open">
         <svg width="100%" height="80%" viewBox="0 0 11 11">
           <rect
             x="0"
