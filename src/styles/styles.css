@@ -1,9 +1,8 @@
 :root {
-  --primary-color: #ffc80b;
-  --secondary-color: #053160;
-  --terciary-color: #031e3c;
 
   --button-height: 92px;
+
+  --slider-position: 10%;
 }
 
 * {
@@ -15,7 +14,7 @@
 html,
 body {
   max-width: 100%;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 body {
@@ -51,28 +50,34 @@ button {
   gap: 10px;
 }
 
+#volume {
+  position: relative;
+}
+
 input {
+  position: relative;
   appearance: none;
   background-color: var(--primary-color);
+  height: var(--button-height);
   width: 100%;
-  height: 92px;
+}
+
+input:before {
+  content: "";
+  position: absolute;
+  width: var(--slider-position);
+  height: 100%;
+  background-color: var(--terciary-color);
 }
 
 input::-webkit-slider-thumb {
+  appearance: none;
   -webkit-appearance: none;
+
   width: 10px;
   height: 92px;
-  background: var(--secondary-color);
+  background: var(--terciary-color);
+
   cursor: -moz-grab;
   cursor: -webkit-grab;
-}
-
-#info,
-#menu {
-  display: flex;
-  height: var(--button-height);
-}
-
-#menu {
-  justify-self: end;
 }
