@@ -11,9 +11,9 @@ The app is built using the following technologies:
 - JavaScript
 - Firebase
 
-## Installation
+## How to use
 
-**todo**
+Access the app [here](https://jamieburridge.github.io/mobile-development/)
 
 ## Contributors
 
