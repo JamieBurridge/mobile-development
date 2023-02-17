@@ -4,6 +4,7 @@
   --terciary-color: #031e3c;
 
   --button-height: 92px;
+  --slider-position: 10%;
 }
 
 * {
@@ -52,19 +53,23 @@ button {
 }
 
 input {
+  position: relative;
   appearance: none;
-  background-color: var(--primary-color);
+  background-color: var(--terciary-color);
+  height: var(--button-height);
   width: 100%;
-  height: 92px;
+}
+
+input:before {
+  content: "";
+  position: absolute;
+  width: var(--slider-position);
+  height: 100%;
+  background-color: var(--primary-color);
 }
 
 input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 10px;
-  height: 92px;
-  background: var(--secondary-color);
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
+  opacity: 0;
 }
 
 #info,
