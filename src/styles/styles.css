@@ -2,9 +2,9 @@
   --primary-color: #ffc80b;
   --secondary-color: #053160;
   --terciary-color: #031e3c;
+  --transition-speed: 200ms;
 
   --button-height: 92px;
-  --slider-position: 10%;
 }
 
 * {
@@ -20,6 +20,7 @@ body {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +29,7 @@ body {
 
   max-width: 800px;
   height: 100vh;
-  margin: 0 auto;
+  margin: auto;
 }
 
 button {
@@ -52,24 +53,31 @@ button {
   gap: 10px;
 }
 
-input {
+input[type="range"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.range {
   position: relative;
-  appearance: none;
+  display: flex;
   background-color: var(--terciary-color);
-  height: var(--button-height);
+  flex: 1;
+  max-height: 160px;
+}
+
+.range-bar {
+  flex: 1;
+  transform-origin: left;
+  transform: scaleX(0.5);
+  background-color: var(--primary-color);
+  pointer-events: none;
   width: 100%;
 }
 
-input:before {
-  content: "";
-  position: absolute;
-  width: var(--slider-position);
-  height: 100%;
-  background-color: var(--primary-color);
-}
-
-input::-webkit-slider-thumb {
-  opacity: 0;
+#scrub > .range-bar {
+  background-color: #181717;
 }
 
 #info,
@@ -80,4 +88,23 @@ input::-webkit-slider-thumb {
 
 #menu {
   justify-self: end;
+}
+
+.toggle {
+}
+
+.toggle > * {
+  display: none;
+}
+
+#menu-container {
+  position: absolute;
+  inset: 0;
+  bottom: var(--button-height);
+
+  background-color: var(--primary-color);
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition-speed) ease;
 }
