@@ -3,7 +3,12 @@ import Menu from "../components/Menu.js";
 import RangeBar from "../components/RangeBar.js";
 import ToggleButton from "../components/ToggleButton.js";
 
-window.onload = () => {
+let appData;
+
+window.onload = async () => {
+  const req = await fetch("app_data.json");
+  appData = await req.json();
+
   setupLayout();
 };
 
@@ -35,7 +40,7 @@ const setupLayout = () => {
     console.log(value);
   });
 
-  const menu = new Menu("#menu");
+  const menu = new Menu("#menu", appData);
 
   // Show all buttons on load
   infoButton.toggle();

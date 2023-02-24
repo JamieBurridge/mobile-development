@@ -4,4 +4,8 @@ export default class Component {
   constructor(elementID = null) {
     this.element = document.querySelector(elementID);
   }
+
+  setElement(element) {
+    this.element = element;
+  }
 }
