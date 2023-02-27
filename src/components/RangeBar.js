@@ -4,19 +4,24 @@ export default class RangeBar extends Component {
   #rangeInput;
   #rangeBar;
 
-  constructor(rangeID = null) {
-    super(rangeID);
+  constructor(elemID = null, callback) {
+    super(elemID, callback);
 
     this.#rangeInput = this.element.querySelector("input[type='range']");
     this.#rangeBar = this.element.querySelector(".range-bar");
+
+    this.#rangeInput.oninput = () => {
+      this.value = this.#rangeInput.value;
+
+      this.callback(this.value);
+    };
   }
 
-  onInput(callback) {
-    this.#rangeInput.oninput = () => {
-      const value = this.#rangeInput.value;
+  get value() {
+    return parseFloat(this.#rangeInput.value);
+  }
 
-      this.#rangeBar.style.transform = `scaleX(${value / 100})`;
-      callback(value);
-    };
+  set value(value) {
+    this.#rangeBar.style.transform = `scaleX(${value / 100})`;
   }
 }
