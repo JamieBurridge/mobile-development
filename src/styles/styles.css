@@ -2,6 +2,7 @@
   --primary-color: #ffc80b;
   --secondary-color: #053160;
   --terciary-color: #031e3c;
+  --error-color: #af1616;
   --transition-speed: 200ms;
 
   --font-size: clamp(2.5rem, 3vw, 3.5rem);

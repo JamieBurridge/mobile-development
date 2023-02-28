@@ -11,6 +11,7 @@
   </head>
   <body>
     <div id="info">
+      <div id="info-container"></div>
       <button id="info-button" class="toggle">
         <label>info</label>
         <svg
@@ -40,7 +41,7 @@
       </button>
       <button id="action-button" class="toggle">
         <svg
-          width="70%"
+          width="90%"
           height="100%"
           viewBox="0 0 23 23"
           fill="var(--primary-color)"
@@ -49,13 +50,35 @@
         </svg>
 
         <svg
-          width="70%"
+          width="90%"
           height="100%"
           viewBox="0 0 23 23"
           fill="var(--primary-color)"
         >
           <rect x="-0" y="0" width="9.339" height="22.166" />
           <rect x="12.825" y="0" width="9.339" height="22.166" />
+        </svg>
+
+        <svg
+          width="90%"
+          height="100%"
+          viewBox="0 0 23 23"
+          fill="var(--terciary-color)"
+        >
+          <rect x="0" y="8.29" width="5.585" height="5.585" />
+          <rect x="8.29" y="8.29" width="5.585" height="5.585" />
+          <rect x="16.58" y="8.29" width="5.585" height="5.585" />
+        </svg>
+
+        <svg
+          width="90%"
+          height="100%"
+          viewBox="0 0 6 6"
+          fill="var(--error-color)"
+        >
+          <path
+            d="M2.831,1.858l1.802,-1.858l1.03,1.062l-1.716,1.769l1.716,1.77l-1.03,1.062l-1.802,-1.858l-1.801,1.858l-1.03,-1.062l1.716,-1.77l-1.716,-1.769l1.03,-1.062l1.801,1.858Z"
+          />
         </svg>
       </button>
       <button id="next-button">
@@ -75,26 +98,27 @@
       <div class="range-bar"></div>
       <input type="range" min="0" max="100" value="10" />
     </div>
-
     <div id="menu">
-      <div id="menu-container">
-        <div class="lists-container"></div>
-      </div>
-      <button id="menu-button" class="toggle">
+      <div id="menu-container"></div>
+      <button id="menu-back-button" class="back-button">
         <svg
           width="100%"
-          height="70%"
-          viewBox="0 0 6 6"
+          height="45px"
+          viewBox="0 0 7 5"
           fill="var(--primary-color)"
         >
           <path
-            d="M2.831,1.858l1.802,-1.858l1.03,1.062l-1.716,1.769l1.716,1.77l-1.03,1.062l-1.802,-1.858l-1.801,1.858l-1.03,-1.062l1.716,-1.77l-1.716,-1.769l1.03,-1.062l1.801,1.858Z"
+            d="M3.083,0.855l-0.832,-0.855l-2.251,2.251l2.221,2.279l0.844,-0.844l-1.377,-1.435l1.395,-1.396Z"
+          />
+          <path
+            d="M6.247,0.855l-0.832,-0.855l-2.251,2.251l2.221,2.279l0.844,-0.844l-1.377,-1.435l1.395,-1.396Z"
           />
         </svg>
-
+      </button>
+      <button id="menu-button" class="toggle">
         <svg
-          width="100%"
-          height="70%"
+          width="45px"
+          height="45px"
           viewBox="0 0 11 11"
           fill="var(--primary-color)"
         >
@@ -102,16 +126,27 @@
           <rect x="0" y="3.876" width="10.355" height="2.609" />
           <rect x="0" y="7.746" width="10.355" height="2.609" />
         </svg>
+        <svg
+          width="45px"
+          height="45px"
+          viewBox="0 0 6 6"
+          fill="var(--primary-color)"
+        >
+          <path
+            d="M2.831,1.858l1.802,-1.858l1.03,1.062l-1.716,1.769l1.716,1.77l-1.03,1.062l-1.802,-1.858l-1.801,1.858l-1.03,-1.062l1.716,-1.77l-1.716,-1.769l1.03,-1.062l1.801,1.858Z"
+          />
+        </svg>
       </button>
     </div>
 
+    <!-- TEMPLATES -->
     <template class="list-item">
       <li>
         <label>Item default</label>
         <div class="toggle">
           <svg
             width="100%"
-            height="60%"
+            height="45px"
             viewBox="0 0 4 5"
             fill="var(--secondary-color)"
           >
