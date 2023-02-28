@@ -13,7 +13,7 @@ The app is built using the following technologies:
 
 ## How to use
 
-Access the app [here](https://mobile-development-iota.vercel.app/)
+Access the app [here](https://jamieburridge.github.io/mobile-development/)
 
 ## Contributors
 
