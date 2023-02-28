@@ -35,7 +35,7 @@
             "children": [
               {
                 "id": "music/Estilo A/Banda A/nome da musica",
-                "name": "nome da musica",
+                "name": "filho da musica",
                 "type": "file",
                 "url": "url para a musica"
               }

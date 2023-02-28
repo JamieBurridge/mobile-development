@@ -3,8 +3,8 @@ import Button from "./Button.js";
 export default class ListButton extends Button {
   #listButtonData;
 
-  constructor(data) {
-    super();
+  constructor(data, callback) {
+    super(null, callback);
 
     this.#listButtonData = data;
 
