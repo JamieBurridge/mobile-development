@@ -8,6 +8,7 @@ let appData;
 const API_URL = "https://stream-dust-knee.glitch.me/";
 let info;
 let controller;
+let scrub;
 let volumeBar;
 let menu;
 let fileInput;
@@ -90,6 +91,10 @@ const setupLayout = () => {
         break;
     }
     console.log("controller", value);
+  });
+
+  scrub = new RangeBar("#scrub", (value) => {
+    console.log(value);
   });
 
   volumeBar = new RangeBar("#volume", (value) => {
