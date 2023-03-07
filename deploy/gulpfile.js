@@ -41,16 +41,18 @@ const terser_config = {
 };
 
 const modules = [
-  "../src/components/AudioPlayer.js",
-  "../src/components/Component.js",
-  "../src/components/Button.js",
-  "../src/components/ToggleButton.js",
-  "../src/components/ListButton.js",
-  "../src/components/Info.js",
-  "../src/components/Controller.js",
-  "../src/components/RangeBar.js",
-  "../src/components/Menu.js",
-  "../src/scripts/main.js",
+  "../components/AudioPlayer.js",
+  "../components/Component.js",
+  "../components/Button.js",
+  "../components/ToggleButton.js",
+  "../components/ListButton.js",
+  "../components/PeekABoo.js",
+  "../components/Info.js",
+  "../components/Controller.js",
+  "../components/RangeBar.js",
+  "../components/Splash.js",
+  "../components/Menu.js",
+  "../main.js",
 ];
 
 //METHODS
@@ -61,11 +63,12 @@ const minifyHead = () => {
         let out = [];
         let collect = false;
         content.split("\n").forEach((ln) => {
-          if (ln === "") collect = false;
+          if (ln.includes("<head>")) collect = true;
           if (collect) out.push(ln);
-          if (ln === "<head>") collect = true;
+          if (ln === "") collect = false;
         });
         content = out.join("\n");
+        content = content.replace(/<head>/g, "");
         callback(null, content);
       })
     )
@@ -79,22 +82,21 @@ const minifyBody = () => {
         let out = [];
         let collect = false;
         content.split("\n").forEach((ln) => {
-          if (ln === "</body>") collect = false;
+          if (ln.includes("<body>")) collect = true;
           if (collect) out.push(ln);
-          if (ln === "<body>") collect = true;
+          if (ln.includes("</body>")) collect = true;
         });
         content = out.join("\n");
+        content = content.replace(/<body>/g, "");
         callback(null, content);
       })
     )
     .pipe(concat(bodyName))
     .pipe(dest(`./`));
 };
+
 const minifyCSS = () => {
-  return src("../src/styles/styles.css")
-    .pipe(cleanCSS())
-    .pipe(concat(stylesName))
-    .pipe(dest(`./`));
+  return src("../styles.css").pipe(cleanCSS()).pipe(concat(stylesName)).pipe(dest(`./`));
 };
 const minifyJS = () => {
   return src(modules)
@@ -121,19 +123,9 @@ const inject2HTML = () => {
     .pipe(dest("../"));
 };
 const cleanup = () => {
-  return deleteAsync(
-    [`${headName}`, `${bodyName}`, `${stylesName}`, `${scriptName}`],
-    {
-      force: true,
-    }
-  );
+  return deleteAsync([`${headName}`, `${bodyName}`, `${stylesName}`, `${scriptName}`], {
+    force: true,
+  });
 };
 
-export default series(
-  minifyHead,
-  minifyBody,
-  minifyCSS,
-  minifyJS,
-  inject2HTML,
-  cleanup
-);
+export default series(minifyHead, minifyBody, minifyCSS, minifyJS, inject2HTML, cleanup);
